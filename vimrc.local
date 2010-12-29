@@ -1,0 +1,55 @@
+
+
+set mouse=a
+set ruler
+set term=xterm-color
+"color desertEx
+color molokai
+"color fruit
+set nohls
+map <Leader>. :tabn<CR>
+"set shellcmdflag="-ic"
+map <D-y> :!echo hi<CR>
+"map <M-c> "*y
+"map <M-x> "*d
+"map <M-v> :r !pbpaste<CR>
+set clipboard=unnamed
+set wrap
+set modelines=0
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+set cul
+set ttyfast
+set autoindent
+set showmode
+set showcmd
+set visualbell
+nnoremap / /\v
+vnoremap / /\v
+nnoremap j gj
+nnoremap k gk
+
+"if gvim running define colorcolumn
+if has("gui_running")
+ set colorcolumn=85
+endif
+
+" W = w | Q = q | Wq = wq | wQ = wq | WQ = wq
+cab W w | cab Q q | cab Wq wq | cab wQ wq | cab WQ wq
+
+"shortcut to navigate in tabs
+map th :tabfirst<CR>
+map tj :tabnext<CR>
+map tk :tabprev<CR>
+map tl :tablast<CR>
+map tt :tabedit<Space>
+map tn :tabnext<Space>
+map tm :tabm<Space>
+
+
+"stattus bar with file encoding
+if has("statusline")
+ set statusline=%<%f\ %h%m%r%=%{\"[\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\",B\":\"\").\"]\ \"}%k\ %-14.(%l,%c%V%)\ %P
+endif
